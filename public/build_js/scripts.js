@@ -18761,6 +18761,7 @@ app.Server = Backbone.Model.extend({
 		cpu: null,
 		hdd: null,
 		ram: null,
+		os: null,
 		inventory_number: '1',
 		serial_number: '1',
 		appointment: null,
@@ -18857,6 +18858,7 @@ app.ServerAddView = Backbone.View.extend({
 			cpu: $("#cpu").val(),
 			hdd: $("#hdd").val(),
 			ram: $("#ram").val(),
+			os: $("#os").val(),
 			inventory_number: $("#inventory_number").val(),
 			serial_number: $("#serial_number").val(),
 			appointment: $("#appointment").val()
@@ -18948,6 +18950,7 @@ app.ServerEditView = Backbone.View.extend({
 			cpu: $("#cpu").val(),
 			hdd: $("#hdd").val(),
 			ram: $("#ram").val(),
+			os: $("#os").val(),
 			inventory_number: $("#inventory_number").val(),
 			serial_number: $("#serial_number").val(),
 			appointment: $("#appointment").val()

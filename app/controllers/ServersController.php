@@ -16,6 +16,7 @@ class ServersController extends BaseController {
             'cpu' => '',
             'hdd' => '',
             'ram' => '',
+            'os' => '',
             'inventory_number' => 'unique:servers',
             'serial_number' => 'unique:servers',
             'appointment' => '',
@@ -33,6 +34,7 @@ class ServersController extends BaseController {
             'cpu' => 'CPU',
             'hdd' => 'HDD',
             'ram' => 'RAM',
+            'os' => 'Операційна система',
             'inventory_number' => 'Інв. номер',
             'serial_number' => 'Серійний номер',
             'appointment' => 'Призначення',
@@ -224,6 +226,15 @@ class ServersController extends BaseController {
                         'new_value' => Input::get('ram'),
                     );                    
                 }
+                if ($server->os != Input::get('os')) 
+                {
+                    $history[] = array(
+                        'time' => $time,
+                        'field' => 'ОС',
+                        'old_value' => $server->os,
+                        'new_value' => Input::get('os'),
+                    );                    
+                }
                 if ($server->inventory_number != Input::get('inventory_number')) 
                 {
                     $history[] = array(
@@ -269,6 +280,7 @@ class ServersController extends BaseController {
                 $server->cpu = Input::get('cpu');
                 $server->hdd = Input::get('hdd');
                 $server->ram = Input::get('ram');
+                $server->os = Input::get('os');
                 $server->inventory_number = Input::get('inventory_number');
                 $server->serial_number = Input::get('serial_number');
                 $server->appointment = Input::get('appointment');
@@ -285,7 +297,7 @@ class ServersController extends BaseController {
                 }
                 $server->save();
                 $server->load('type');
-                return Response::json(array('history' => $server->history, 'type' => $server->type->title));
+                return Response::json(array('history' => json_decode($server->history), 'type' => $server->type->title));
             }
             else
             {
@@ -331,6 +343,7 @@ class ServersController extends BaseController {
             $server->cpu = Input::get('cpu');
             $server->hdd = Input::get('hdd');
             $server->ram = Input::get('ram');
+            $server->os = Input::get('os');
             $server->inventory_number = Input::get('inventory_number');
             $server->serial_number = Input::get('serial_number');
             $server->appointment = Input::get('appointment');

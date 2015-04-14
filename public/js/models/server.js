@@ -12,6 +12,7 @@ app.Server = Backbone.Model.extend({
 		cpu: null,
 		hdd: null,
 		ram: null,
+		os: null,
 		inventory_number: '1',
 		serial_number: '1',
 		appointment: null,

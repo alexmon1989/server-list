@@ -51,6 +51,7 @@ app.ServerEditView = Backbone.View.extend({
 			cpu: $("#cpu").val(),
 			hdd: $("#hdd").val(),
 			ram: $("#ram").val(),
+			os: $("#os").val(),
 			inventory_number: $("#inventory_number").val(),
 			serial_number: $("#serial_number").val(),
 			appointment: $("#appointment").val()

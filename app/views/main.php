@@ -61,6 +61,7 @@
                         <th>СPU</th>
                         <th>HDD</th>
                         <th>RAM</th>
+                        <th>ОС</th>
                         <th>Інв. номер</th>
                         <th>Серійный номер </th>
                         <th>Призначення</th>
@@ -83,6 +84,7 @@
             <td><%= cpu %></td>
             <td><%= hdd %></td>
             <td><%= ram %></td>
+            <td><%= os %></td>
             <td><%= inventory_number %></td>
             <td><%= serial_number %></td>
             <td><%= appointment %></td>
@@ -194,6 +196,15 @@
 
             <div class="row">
                 <div class="col-md-3">
+                    <strong>ОС</strong>
+                </div>
+                <div class="col-md-9">
+                    <%= server.os %>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
                     <strong>Інв. номер</strong>
                 </div>
                 <div class="col-md-9">
@@ -243,7 +254,6 @@
                         </thead>
                         <tbody>
                         <%
-                        //var h = JSON.parse(server.history);
                         _.each(server.history, function(item){
                         %>
                         <tr>
@@ -365,6 +375,13 @@
                     <label for="ram" class="col-sm-1 control-label">RAM</label>
                     <div class="col-sm-11">
                         <input type="text" class="form-control" id="ram" value="<%= server.ram || '' %>" placeholder="RAM">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="ram" class="col-sm-1 control-label">ОС</label>
+                    <div class="col-sm-11">
+                        <input type="text" class="form-control" id="os" value="<%= server.os || '' %>" placeholder="ОС">
                     </div>
                 </div>
 
@@ -529,7 +546,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <p class="text-center">
-                        Програмне забезпечення для обліку серверів ДП "УІПВ"<br>
+                        Програмне забезпечення для обліку серверів ДП "УІПВ".<br><br><br>
                         &copy; ДП "Український інститут промислової власності", 2015 р.
                     </p>
                 </div>
