@@ -1,0 +1,30 @@
+{
+  "name": "backbone-flash",
+  "description": "Adds flash notification features to backbone",
+  "keywords": [
+    "backbone",
+    "flash",
+    "notification"
+  ],
+  "authors": [
+    {
+      "name": "Brian Mancini",
+      "email": "bmancini@gmail.com"
+    }
+  ],
+  "dependencies": {
+    "backbone": "1.*.0"
+  },
+  "main": "backbone-flash.js",
+  "homepage": "https://github.com/bmancini55/backbone-flash",
+  "_release": "8737b6ed37",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "8737b6ed370f260542557ab8ad5b3eb1635bff6a"
+  },
+  "_source": "git://github.com/bmancini55/backbone-flash.git",
+  "_target": "*",
+  "_originalSource": "backbone-flash",
+  "_direct": true
+}
